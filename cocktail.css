@@ -52,7 +52,7 @@ body>section {
 }
 
 .whitebackground {
-  background-color: whitesmoke;
+  background: rgba(255, 255, 255, 0.4);
 }
 
 h1 {
@@ -74,6 +74,8 @@ header {
 
 button {
   margin-top: 15px;
+  background-color: rgba(255, 255, 255, 0.6) !important;
+
 }
 
 #cocktailpicture {
