@@ -1,0 +1,96 @@
+/*
+ * CS 310
+ *
+ * This page provides styling for the CS 310 Lab 6 web service page.
+ */
+body {
+  font-size: 12pt;
+  margin: auto auto;
+  text-align: center;
+  width: 80%;
+  background-image: url("./images/pexels-miriam-fischer-2645245.jpg");
+  background-size: 100%;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+img {
+  height: 200px;
+  border-radius: 15px;
+}
+
+#cocktail-area {
+  max-width: 80%;
+  margin: auto;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+
+#cocktail-area p {
+  font-style: italic;
+}
+
+#cocktail-area ul {
+  margin: auto;
+  text-align: left;
+  width: 300px;
+}
+
+#cocktail-area li {
+  margin: auto;
+  text-align: left;
+  width: 300px;
+}
+
+body>section {
+  margin-bottom: 20px;
+}
+
+.form-check {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.whitebackground {
+  background-color: whitesmoke;
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 55px;
+  margin-bottom: 20px;
+  display: inline-block;
+  width: 50%;
+  position: relative;
+  left: 44px;
+  margin-top: 20px;
+  ;
+}
+
+header {
+  text-align: center;
+
+}
+
+button {
+  margin-top: 15px;
+}
+
+#cocktailpicture {
+  height: 400px
+}
+
+.hide {
+  display: none;
+}
+
+#bluedrink {
+  height: 66px;
+  position: relative;
+  bottom: 15px;
+  right: 50px;
+}
+
+.margintop {
+  margin-top: 35px;
+}
