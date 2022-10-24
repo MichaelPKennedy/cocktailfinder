@@ -1,5 +1,6 @@
 /*
  * Michael Kennedy
+ * Cocktail Finder
  * Provides styling for html
  */
 body {
@@ -89,7 +90,6 @@ button {
   height: 66px;
   position: relative;
   bottom: 15px;
-  right: 50px;
 }
 
 .margintop {
