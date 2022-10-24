@@ -1,7 +1,6 @@
 /**
- * CS 310
  * Michael Kennedy
- * Cocktails Lab05
+ * Cocktail Finder
  */
 "use strict";
 (function () {
@@ -16,9 +15,6 @@
    * creates event listener for the pick one for me button
    */
   function init() {
-    // update page with a random cocktail
-    // TODO: click event listener for the "Pick one for me!" button
-    // uncheck the radio button when 
     let button = document.getElementById('random');
     button.addEventListener('click', () => {
       makeRequest();
@@ -30,7 +26,6 @@
 
     let pickbutton = document.getElementById('random');
     pickbutton.classList.add('margintop');
-    // TODO: click event listener for the radio buttons
 
     let radiobutton = document.querySelectorAll("input[name='flexRadioDefault']");
     for (let i = 0; i < radiobutton.length; i++) {
@@ -45,10 +40,8 @@
   }
 
   /**
-   * TODO: Fetch data from the CocktailDB api! 
-   * Noted that this API returns JSON, not plain text!
    * @param {string} drink_name - the cocktail's name
-   *                 !!! random cocktail if drink_name is undefined
+   *               
    */
   function makeRequest(drink_name) {
     // TODO: format the API's url 
@@ -61,33 +54,26 @@
     }
 
 
-    // TODO: 1. make a fetch to the API
-    //       2. check the status of the promise
-    //       3. parse the data
-    //       4. show the cocktail
-    //       5. catch the error message if promise rejected.
     fetch(url)
-      .then(checkStatus)      // helper function provide to ensure request is successful or not
+      .then(checkStatus)
       .then(showCocktail)
       .catch(console.log);
 
   }
 
   /**
-   * show a cocktail's info
+   * shows a cocktail's info
    * @param {object} res - the response data in JSON format
    */
   function showCocktail(res) {
 
     console.log(res);
-    // TODO: clear the innerHTML of #cocktail-area so it's ready for 
-    // showing the new cocktail's info
+
     let parent = document.getElementById('cocktail-area');
     parent.innerHTML = "";
     let pickbutton = document.getElementById('random');
     pickbutton.classList.remove('margintop');
 
-    // TODO: create a new <img> 
     let cocktail = res.drinks[0];
     console.log(cocktail);
     let image = document.createElement('img');
@@ -99,13 +85,11 @@
     cocktailimage.classList.add('hide');
 
 
-    // TODO: create a new <h1> for title  
     let title = document.createElement('h1');
     title.innerText = cocktail.strDrink;
     parent.appendChild(title);
 
 
-    // TODO: create a new <p> for instruction
     let instruction = document.createElement('p');
     instruction.innerText = cocktail.strInstructions;
     parent.appendChild(instruction);
@@ -113,24 +97,22 @@
     let line = document.createElement('hr');
     parent.appendChild(line);
 
-    // TODO: create a new <h2> for "Ingredients:" sub-title
     let subtitle = document.createElement('h2');
     subtitle.innerText = 'Ingredients';
     parent.appendChild(subtitle);
 
-    // TODO: create a new <ul> for a list of ingredients
     let ul = document.createElement("ul");
     let i = 1;
     let ingredient = "strIngredient" + i;
     let measure = "strMeasure" + i;
     while (cocktail[ingredient]) {
-      // TODO: create <li> for one ingredient and its measure
+
       let li = document.createElement('li');
       if (cocktail[measure])
         li.innerText = cocktail[ingredient] + ": " + cocktail[measure];
       else li.innerText = cocktail[ingredient];
       parent.appendChild(li);
-      // update key
+
       i++;
       ingredient = "strIngredient" + i;
       measure = "strMeasure" + i;
@@ -144,8 +126,6 @@
   /* ------------------------------ Helper Functions below ------------------------------ */
 
   /**
-   * Helper function to return the response's result text if successful, otherwise
-   * returns the rejected Promise result with an error status and corresponding text
    * @param {object} response - response to check for success/error
    * @return {object} - valid response if response was successful, otherwise rejected
    *                    Promise result
